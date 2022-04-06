@@ -1,0 +1,7 @@
+ray
+tqdm
+osmnx
+geopandas
+shapely
+numpy
+networkx
