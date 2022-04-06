@@ -8,13 +8,13 @@ Methodology
 =============================
 Trajectory Generator uses a practical and straightforward approach to simulate and generate trajectories. In particular, it performs the following steps:
 
-1. Start by downloading the road network $G$ for the area of interest (e.g., NYC) from OpenStreetMap. 
+1. Start by downloading the road network G for the area of interest (e.g., NYC) from [OpenStreetMap](http://openstreetmap.org/). 
 
-2. Select a random pair of nodes from $G$ to serve as the source and destination of the trajectory to be generated.
+2. Select a random pair of nodes from G to serve as the source and destination of the trajectory to be generated.
 
-3. Identify the shortest path between these two nodes in $G$. This path serves as the route traveled by the vehicle.
+3. Identify the shortest path between these two nodes in G. This path serves as the route traveled by the vehicle.
 
-4. Sample GPS points every $x$ meters along the route.
+4. Sample GPS points every x meters along the route.
 
 5. Add a Gaussian (normally distributed) noise for these GPS points. 
 
@@ -32,8 +32,8 @@ You can create a virtual environment using [`venv`](https://docs.python.org/3/li
 
     pip install -r requirements.txt
 
-Note that At the time of writing, Trajectory Generator support **Python<=3.7** due to 
-some dependencies (Ray) that do npt support Python>3.7
+Note that at the time of writing, Trajectory Generator support **Python<=3.7** due to 
+some dependencies ([Ray](https://www.ray.io/)) that currently do not support Python>3.7
 
 ## 2- Update the Configuration:
 
@@ -63,7 +63,7 @@ The output is a set of CSV files (compressed in gzip format). Each row is a sing
 
 | Field      | Description                                                                                                                 |
 | -----------|---------------------------------------------------------------------------------------------------------------------------- |
-|trj_id      | Sequential numeric ID starts from 1 and continues through all generated trajectories (across all files) until `count-1`.   |
+|trj_id      | Sequential numeric ID starts from 1 and continues through all generated trajectories (across all files) until `count-1`.    |
 |pickup_lon  | Longitude of the trajectory starting point (source node).                                                                   |
 |pickup_lat  | Latitude of the trajectory starting point (source node).                                                                    |
 |dropoff_lon | Longitude of the trajectory ending point (destination node).                                                                |
@@ -83,21 +83,3 @@ Contributions
 ==
 
 Contributions by reporting issues, suggesting/adding features, or fixing bugs are highly welcomed. Please submit an issue or pull request to contribute.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-fix simplified trajectory preserve 
-expose the parameters 
-same pair will always have same chosen shortest path, and therefore same Trajectory. have some differences: e.g. randomly take 2nd or 3rd shortest path, randomly add stop point, randomly minimze either distance or time. 
-
