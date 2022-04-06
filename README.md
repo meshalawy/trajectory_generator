@@ -1,4 +1,8 @@
 
+![Example Generated Trajectories for Minneapolis, MN, USA](./example_msp1.png)
+
+
+
 Overview
 ==============================
 
